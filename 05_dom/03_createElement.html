@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Element Via JS</title>
+</head>
+<body style="background-color: black; color:white;">
+    
+</body>
+<script>
+    const div = document.createElement('div')
+    div.className = "myDivClass"
+    div.id = "myDivId"
+    div.setAttribute("title", "myDivTitle")
+    div.style.backgroundColor = "grey"
+    div.style.padding = "10px"
+    // div.innerText = "this is div" // way one
+    const addText = document.createTextNode("this is div text")
+    div.appendChild(addText) // way two
+
+    document.body.appendChild(div)
+    console.log(div)
+</script>
+</html>
