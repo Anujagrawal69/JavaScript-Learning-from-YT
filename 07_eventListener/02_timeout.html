@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeout Concept</title>
+</head>
+<body>
+    <h2>Chai Aur Code</h2>
+    <button class="stop">Stop</button>
+</body>
+<script>
+    console.log('the heading is going to change.')
+    const changeHeading = function(){
+        const heading = document.querySelector('h2').innerHTML = 'Learning JavaScript with Chai Aur Code'
+    }
+    const stopMe = setTimeout(changeHeading, 3000);
+
+    document.querySelector('.stop').addEventListener('click', ()=>{
+        clearTimeout(stopMe);
+        console.log('just stopped');
+    })
+
+</script>
+</html>

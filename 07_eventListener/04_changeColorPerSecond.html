@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Color</title>
+</head>
+
+<body>
+    <h1>Kya Aapko Color Change Hota Hua Dikh Raha Hai?</h1>
+    <button class="start">Start</button>
+    <button class="stop">Stop</button>
+</body>
+<script>
+    let set;
+    function generateColor() {
+        let hex = '0123456789ABCDEF';
+        let hexValue = '#';
+        for (let i = 0; i < 6; i++) {
+            hexValue += hex[Math.floor(Math.random() * 16)];
+        }
+        return hexValue;
+    }
+    generateColor()
+    const changeBackgroundColor = function(){
+        document.querySelector('body').style.backgroundColor = generateColor()
+    }
+
+    document.querySelector('.start').addEventListener('click', ()=>{
+        set = setInterval(changeBackgroundColor, 1000)
+    })
+    document.querySelector('.stop').addEventListener('click', ()=>{
+        clearInterval(set)
+    })
+</script>
+
+</html>
